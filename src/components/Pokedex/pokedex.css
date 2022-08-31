@@ -1,8 +1,9 @@
 .main{
     background-color: #ee2b34 !important;
     display:flex;
-    flex-direction:column;
+    flex-direction:row;
     align-items: center;
+    justify-content:space-around;
 }
 
 .divImagen{
@@ -23,4 +24,26 @@
     background-color: rgb(0, 0, 0) !important;
     border-radius: 40px;
     display: flex;
+}
+
+.imgPokemom{
+    height: 100%;
+    width: 100%;
+}
+
+.divBuscadorTabla{
+    display:flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+}
+
+.divBuscador{
+    margin-bottom: 40px;
+}
+
+.divTabla{
+    background-color: #ffffff;
+    color: #fff;
+    border-radius: 10px;
 }
