@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/react-desafio-4/static/css/main.7aed6a00.css",
-    "main.js": "/react-desafio-4/static/js/main.e23564fb.js",
+    "main.css": "/react-desafio-4/static/css/main.027a4edf.css",
+    "main.js": "/react-desafio-4/static/js/main.391f3d2e.js",
     "index.html": "/react-desafio-4/index.html",
-    "main.7aed6a00.css.map": "/react-desafio-4/static/css/main.7aed6a00.css.map",
-    "main.e23564fb.js.map": "/react-desafio-4/static/js/main.e23564fb.js.map"
+    "main.027a4edf.css.map": "/react-desafio-4/static/css/main.027a4edf.css.map",
+    "main.391f3d2e.js.map": "/react-desafio-4/static/js/main.391f3d2e.js.map"
   },
   "entrypoints": [
-    "static/css/main.7aed6a00.css",
-    "static/js/main.e23564fb.js"
+    "static/css/main.027a4edf.css",
+    "static/js/main.391f3d2e.js"
   ]
 }
