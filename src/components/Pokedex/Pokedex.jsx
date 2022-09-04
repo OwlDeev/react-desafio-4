@@ -1,24 +1,25 @@
 import React from "react";
 import "./pokedex.css";
-// import FetchDatos from "../FetchDatos";
 import Buscador from "../Buscador/Buscador";
 import { imagenes } from "../../imgs/imagenes";
 import Tabla from "../Tabla/Tabla";
-// import { useState } from "react";
 
-function Pokedex({url}) {
-  let imagen = "";
+function Pokedex({ url, nombreBuscador, setNombreBuscador, listaPokemon }) {
 
   function imagenPokedex() {
-    let imagenNueva;
 
-    if (imagen === "") {
-      imagenNueva = imagenes.filter((imagen) => {
-        if (imagen.nombre === "pokedex") {
-          return imagen;
+    let imagenNueva = imagenes.filter((imagen) => {
+      if (imagen.nombre === nombreBuscador) {
+        return imagen;
+      }
+    });
+
+    if(imagenNueva.length === 0){
+      imagenes.map((imagen) => {
+        if (imagen.nombre === 'pokedex') {
+          imagenNueva.push(imagen);
         }
-      });
-    } else {
+      })
     }
     return imagenNueva[0].src;
   }
@@ -37,10 +38,18 @@ function Pokedex({url}) {
       {/* <FetchDatos></FetchDatos> */}
       <div className="divBuscadorTabla">
         <div className="divBuscador">
-          <Buscador className="buscador"></Buscador>
+          <Buscador
+            nombreBuscador={nombreBuscador}
+            setNombreBuscador={setNombreBuscador}
+            className="buscador"
+          ></Buscador>
         </div>
         <div className="divTabla">
-          <Tabla url={url} className="tabla"></Tabla>
+          <Tabla
+            url={url}
+            listaPokemon={listaPokemon}
+            className="tabla"
+          ></Tabla>
         </div>
       </div>
     </div>

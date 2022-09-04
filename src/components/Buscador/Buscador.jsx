@@ -1,13 +1,20 @@
 import React from "react";
-import "./Buscador.css"
-import Button from '@mui/material/Button';
+import "./Buscador.css";
 
-function Buscador() {
+function Buscador({ nombreBuscador, setNombreBuscador }) {
+
+  const capturaNombrebuscar = (e) => {
+    setNombreBuscador(e.target.value);
+  };
+
   return (
     <div className="main">
-      {/* <input value={filtro} onChange={capturaNombrebuscar}></input> */}
-      <input className="inputBuscar" label="Buscar pokemon"></input>
-      <Button className="buttonBuscar" variant="contained">Buscar</Button>
+      <input
+        className="inputBuscar"
+        label="Buscar pokemon"
+        onChange={capturaNombrebuscar}
+        value={nombreBuscador}
+      ></input>
     </div>
   );
 }

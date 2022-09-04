@@ -8,12 +8,13 @@ function App() {
 
   const [url, setUrl] = useState("");
   const [listaPokemon, setListaPokemon] = useState("");
+  const [nombreBuscador, setNombreBuscador] = useState("");
   
   return (
     <div>
       <AppBarra></AppBarra>
-      <Pokedex listaPokemon={listaPokemon} className="pokedex"></Pokedex>
-      <MiApi url={url} setUrl={setUrl} setListaPokemon={setListaPokemon}></MiApi>
+      <MiApi nombreBuscador={nombreBuscador} setUrl={setUrl} setListaPokemon={setListaPokemon}></MiApi>
+      <Pokedex url={url} nombreBuscador={nombreBuscador} setNombreBuscador={setNombreBuscador} listaPokemon={listaPokemon} className="pokedex"></Pokedex>
     </div>
   );
 }

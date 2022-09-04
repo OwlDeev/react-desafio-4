@@ -1,30 +1,55 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 const baseUrl = "https://pokeapi.co/api/v2/pokemon/";
 
-function MiApi({url, setUrl}) {
+function MiApi({ nombreBuscador, setUrl, setListaPokemon }) {
+  function newListPokemon(newList) {
+    let newListPokemones = [];
+    let idAutoIcrement = 1;
+    for (const pokemon of newList) {
+      var newPokemon = {
+        name: pokemon.name,
+        id: idAutoIcrement++,
+      };
+      newListPokemones.push(newPokemon);
+    }
+    return newListPokemones;
+  }
+  useEffect(() => {
+    const fetchDatos = async () => {
+      let urlFiltro = baseUrl;
+      const resp = await fetch(urlFiltro);
+      const respDatos = await resp.json();
 
-    let filtro;
+      setUrl(newListPokemon(respDatos.results));
+    };
+
+    fetchDatos();
+  }, []);
 
   useEffect(() => {
     const fetchDatos = async () => {
       let urlFiltro = baseUrl;
 
-      if (filtro !== "") {
-        urlFiltro = baseUrl + filtro;
+      if (nombreBuscador !== "") {
+        urlFiltro = baseUrl.trim() + nombreBuscador.trim();
         const resp = await fetch(urlFiltro);
         const respDatos = await resp.json();
-        // setPokemon(respDatos);
+        const objectPokemon = [];
+        objectPokemon.push(respDatos);
+        setListaPokemon(objectPokemon);
       } else {
+        setListaPokemon("");
         const resp = await fetch(urlFiltro);
         const respDatos = await resp.json();
-        setUrl(respDatos.results);
+
+        setUrl(newListPokemon(respDatos.results));
       }
     };
 
     fetchDatos();
-  });
+  }, [nombreBuscador]);
 
   return <div></div>;
 }
