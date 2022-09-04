@@ -10,13 +10,19 @@ export default function Buscador() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" className="buscador">
         <Toolbar>
-          <div className="circuloGrande"></div>
+          <div className="circuloGrande">
+            <div className="circuloGrandeInterior parpadea"></div>
+          </div>
           <div className="divFlexHorizontal circulosDeColores">
             <div className="circuloChico marginCirculos colorRojo"></div>
             <div className="circuloChico marginCirculos colorAmarillo"></div>
             <div className="circuloChico marginCirculos colorVerde"></div>
           </div>
-          <Typography variant="h3" component="div" sx={{ flexGrow: 1 ,textAlign: "center"}}>
+          <Typography
+            variant="h3"
+            component="div"
+            sx={{ flexGrow: 1, textAlign: "center" }}
+          >
             POKEDEX ULTIMATE
           </Typography>
         </Toolbar>

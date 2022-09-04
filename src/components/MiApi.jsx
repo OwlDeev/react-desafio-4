@@ -4,6 +4,7 @@ import { useEffect } from "react";
 const baseUrl = "https://pokeapi.co/api/v2/pokemon/";
 
 function MiApi({ nombreBuscador, setUrl, setListaPokemon }) {
+
   function newListPokemon(newList) {
     let newListPokemones = [];
     let idAutoIcrement = 1;
@@ -14,8 +15,9 @@ function MiApi({ nombreBuscador, setUrl, setListaPokemon }) {
       };
       newListPokemones.push(newPokemon);
     }
-    return newListPokemones;
+    return newListPokemones.sort();
   }
+  
   useEffect(() => {
     const fetchDatos = async () => {
       let urlFiltro = baseUrl;
