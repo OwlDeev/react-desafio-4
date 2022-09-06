@@ -9,5 +9,8 @@ Page: https://owldeev.github.io/react-desafio-4/
 ## Datos del desarrollador
 
 Nombre: Alfonso Sandoval
+
 Nick: OwlDev
+
 Correo: alfonso.sandoval.wp@gmail.com
+
